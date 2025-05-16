@@ -40,15 +40,26 @@
             font-size: 2rem;
         }
 
-        nav ul {
+         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 20px;
         }
-
+        
         nav a {
             color: white;
+            text-decoration: none;
             font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #e74c3c;
+        }
+        
+        nav a.active {
+            color: #e74c3c;
+            font-weight: 600;
         }
 *{
             margin: 0px;
