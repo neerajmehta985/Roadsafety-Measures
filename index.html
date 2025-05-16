@@ -4,15 +4,324 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeRoads - Indian Road Safety Measures</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== Global Styles ===== */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== Header Styles ===== */
+        header {
+            background-color: #1d3557;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            font-weight: 500;
+        }
+*{
+            margin: 0px;
+            padding: 0px;
+        }
+        nav a.active {
+            font-weight: bold;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background-color: #457b9d;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #e63946;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #c1121f;
+            transform: translateY(-2px);
+        }
+
+        /* ===== Safety Tips Section ===== */
+        .safety-tips {
+            padding: 4rem 0;
+        }
+
+        .safety-tips h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-card i {
+            font-size: 2rem;
+            color: #1d3557;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .indian-law {
+            background-color: #f1faee;
+            padding: 0.5rem;
+            border-left: 4px solid #1d3557;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* ===== Indian Laws Section ===== */
+        .indian-laws {
+            background-color: #f1faee;
+            padding: 4rem 0;
+        }
+
+        .indian-laws h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .laws-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .law-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* ===== Statistics Section ===== */
+        .stats {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .stats h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e63946;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #1d3557;
+        }
+
+        /* ===== Emergency Section ===== */
+        .emergency {
+            padding: 4rem 0;
+            background-color: #457b9d;
+            color: white;
+        }
+
+        .emergency h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .emergency-card {
+            padding: 1.5rem;
+        }
+
+        .emergency-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: #1d3557;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .btn.secondary:hover {
+            background-color: white;
+            color: #1d3557;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+        }
+
+        .socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .socials a {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #457b9d;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">
                 <i class="fas fa-car-crash"></i>
-                <h1>SafeRoads India</h1>
             </div>
             <nav>
                 <ul>
@@ -22,10 +331,10 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h2>Making Indian Roads Safer for Everyone</h2>
@@ -34,6 +343,7 @@
         </div>
     </section>
 
+    <!-- Safety Tips Section -->
     <section id="safety-tips" class="safety-tips">
         <div class="container">
             <h2>Essential Indian Road Safety Measures</h2>
@@ -44,48 +354,56 @@
                     <p>As per Section 194B of MV Act, not wearing seatbelts attracts ₹1,000 fine. Front seat passengers must wear seatbelts in all vehicles equipped with them.</p>
                     <p class="indian-law">Law: Rule 138(3) CMVR - Mandatory for driver and front seat passenger</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>No Mobile Phones While Driving</h3>
                     <p>Using mobile phones while driving is prohibited under Section 184 of MV Act with ₹5,000 fine for first offense. Hands-free devices are also discouraged.</p>
                     <p class="indian-law">Law: Rule 3A MVR - ₹1,000 fine for first offense</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-wine-glass-alt"></i>
                     <h3>Strict Drink & Drive Laws</h3>
                     <p>Section 185 mandates ₹10,000 fine or imprisonment up to 6 months for first offense (blood alcohol >30mg/100ml). Second offense within 3 years leads to ₹15,000 fine and 2 years imprisonment.</p>
                     <p class="indian-law">Law: Section 185 MV Act - 0.03% BAC limit</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-traffic-light"></i>
                     <h3>Traffic Signal Compliance</h3>
                     <p>Jumping red light attracts ₹5,000 fine under Section 184. Disobeying traffic directions (Section 119) can lead to ₹2,000 fine.</p>
                     <p class="indian-law">Law: Section 122 MV Act - ₹1,000-2,000 fine</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-child"></i>
                     <h3>Pedestrian Rights & Safety</h3>
                     <p>Drivers must yield to pedestrians at zebra crossings. Not giving way attracts ₹500 fine. Pedestrians should use footpaths and cross only at designated points.</p>
                     <p class="indian-law">Law: Section 138 CMVR - Pedestrian right of way</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-bicycle"></i>
                     <h3>Two-Wheeler Safety Rules</h3>
                     <p>Helmets are mandatory for both rider and pillion under Section 129. Violation attracts ₹1,000 fine and license suspension for 3 months. Only ISI-marked helmets permitted.</p>
                     <p class="indian-law">Law: Rule 138 CMVR - Mandatory helmet rule</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-id-card"></i>
                     <h3>Document Requirements</h3>
                     <p>Must carry: Driving License (DL), Registration Certificate (RC), Insurance, PUC Certificate, and Fitness Certificate (for commercial vehicles). Missing documents attract ₹500-2,000 fines.</p>
                     <p class="indian-law">Law: Section 130 MV Act - Documents to be carried</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-baby-carriage"></i>
                     <h3>Child Safety Norms</h3>
                     <p>Children below 4 years must use child restraint systems. Those under 14 cannot sit in front seat. Violation attracts ₹1,000 fine under Section 194C.</p>
                     <p class="indian-law">Law: Section 194C MV Act - Child safety rules</p>
                 </div>
+                
                 <div class="tip-card">
                     <i class="fas fa-tachometer-alt"></i>
                     <h3>Speed Limits in India</h3>
@@ -96,6 +414,7 @@
         </div>
     </section>
 
+    <!-- Indian Laws Section -->
     <section class="indian-laws">
         <div class="container">
             <h2>Key Indian Traffic Laws & Penalties</h2>
@@ -104,22 +423,27 @@
                     <h3>Driving Without License</h3>
                     <p>₹5,000 fine or imprisonment up to 3 months (Section 181)</p>
                 </div>
+                
                 <div class="law-card">
                     <h3>Overloading Vehicles</h3>
                     <p>₹20,000 + ₹2,000 per extra tonne (Section 194)</p>
                 </div>
+                
                 <div class="law-card">
                     <h3>Dangerous Driving</h3>
                     <p>₹1,000-5,000 fine and/or imprisonment up to 6 months (Section 184)</p>
                 </div>
+                
                 <div class="law-card">
                     <h3>No Pollution Certificate</h3>
                     <p>₹10,000 fine for first offense (Section 190(2))</p>
                 </div>
+                
                 <div class="law-card">
                     <h3>Unauthorized Vehicle Modifications</h3>
                     <p>₹5,000 fine (Section 52 read with Rule 126 CMVR)</p>
                 </div>
+                
                 <div class="law-card">
                     <h3>Triple Riding on Two-Wheelers</h3>
                     <p>₹2,000 fine and license suspension for 3 months (Section 128)</p>
@@ -128,6 +452,7 @@
         </div>
     </section>
 
+    <!-- Statistics Section -->
     <section class="stats">
         <div class="container">
             <h2>Indian Road Safety Statistics</h2>
@@ -136,18 +461,22 @@
                     <div class="stat-number" data-target="153792">0</div>
                     <div class="stat-label">Road accident deaths in 2021 (NCRB)</div>
                 </div>
+                
                 <div class="stat-item">
                     <div class="stat-number" data-target="70">0</div>
                     <div class="stat-label">% deaths among 18-45 age group</div>
                 </div>
+                
                 <div class="stat-item">
                     <div class="stat-number" data-target="44">0</div>
                     <div class="stat-label">% two-wheeler deaths without helmets</div>
                 </div>
+                
                 <div class="stat-item">
                     <div class="stat-number" data-target="31">0</div>
                     <div class="stat-label">% accidents due to overspeeding</div>
                 </div>
+                
                 <div class="stat-item">
                     <div class="stat-number" data-target="9">0</div>
                     <div class="stat-label">% reduction in deaths after stricter laws</div>
@@ -156,6 +485,7 @@
         </div>
     </section>
 
+    <!-- Emergency Section -->
     <section class="emergency">
         <div class="container">
             <h2>Indian Road Emergency Contacts</h2>
@@ -165,16 +495,19 @@
                     <h3>108</h3>
                     <p>National Emergency Number (Ambulance, Police, Fire)</p>
                 </div>
+                
                 <div class="emergency-card">
                     <i class="fas fa-traffic-light"></i>
                     <h3>103</h3>
                     <p>Road Accident Emergency Service</p>
                 </div>
+                
                 <div class="emergency-card">
                     <i class="fas fa-car-crash"></i>
                     <h3>1073</h3>
                     <p>Highway Helpline Number</p>
                 </div>
+                
                 <div class="emergency-card">
                     <i class="fas fa-women"></i>
                     <h3>1091</h3>
@@ -184,6 +517,7 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <h2>Join India's Road Safety Mission</h2>
@@ -195,6 +529,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -208,6 +543,7 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Government Links</h3>
                     <ul>
@@ -217,6 +553,7 @@
                         <li><a href="https://www.ntpc.co.in/">National Traffic Police</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
@@ -226,6 +563,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
@@ -236,13 +574,15 @@
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2023 SafeRoads India. Content based on Motor Vehicles Act 1988 (amended 2019).</p>
                 <p>Disclaimer: This is an awareness initiative, not a government website.</p>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
+                  
+                
+       
 </body>
 </html>
